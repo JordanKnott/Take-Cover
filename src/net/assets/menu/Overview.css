@@ -1,0 +1,9 @@
+.root {
+     -fx-background-image: url("TestBackground.png");
+}
+.label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #fff;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
