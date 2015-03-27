@@ -166,7 +166,7 @@ public class Start extends Application{
 	public void start(Stage primaryStage) {
 //com.sun.javafx.application.tkExit()
 		
-		
+		//Hello
 		Engine.buildControlScene();
 		if(Engine.gridSize < 15){
 			Engine.controlScene = Engine.tabletControl;
