@@ -78,7 +78,7 @@ public class Engine {
 	public static int updateRate; 
 	
 	public static int gridSize;
-	
+	public static int time = 30;
 	public static boolean updateInvCount = true;
 	public static Font BIRTHFONT;
 	public static GridPane status;

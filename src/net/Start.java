@@ -46,6 +46,9 @@ public class Start extends Application{
 
 	//public static Font BIRTHFONT;
 	
+	static boolean playMusic = true;
+	
+	
 	static Engine gameEngine = new Engine();
 	public static  ScrollPane scroll;
 	public static AssetLoader assetLoader = new AssetLoader();
@@ -171,6 +174,7 @@ public class Start extends Application{
 		if(Engine.gridSize < 15){
 			Engine.controlScene = Engine.tabletControl;
 			Engine.updateRate = 1250;
+			Engine.time = 45;
 		}else {
 			System.out.println("Hit!");
 			Engine.controlScene = Engine.computerControl;
@@ -766,8 +770,9 @@ public class Start extends Application{
 	}
 	
 	public static void playTitleMusic(){
-		
-		thread2.start();
+		if(playMusic = true){
+			thread2.start();
+		}
 	}
 	
 	public static void stopTitleMusic(){
@@ -780,9 +785,32 @@ public class Start extends Application{
 			splash.close();
 		}
 		
+		
 		System.out.println(args.length);
+		
 		if(args.length == 1){
-			Engine.gridSize = Integer.parseInt(args[0]);
+			if(args[0].equals("-help")){
+				System.out.println("[name].jar [-help]:[false/False] [integer]");
+				System.out.println("First argument can either display help message or with false/False turn off music");
+				System.out.println("Second argument determines a fixed gridsize for the gameboard");
+			}
+		}
+		
+		
+		if(args.length == 1){
+			if(args[0].equals("false") || args[0].equals( "False")){
+				playMusic = false;
+				System.out.println("No Music!");
+			}else{
+				
+				playTitleMusic();
+			}
+			
+		}
+		
+		
+		if(args.length == 2){
+			Engine.gridSize = Integer.parseInt(args[1]);
 		}else {
 			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 			double width = screenSize.getWidth();
@@ -790,7 +818,7 @@ public class Start extends Application{
 			
 		}
 
-		playTitleMusic();
+	
 		launch(args);
 		
 	}

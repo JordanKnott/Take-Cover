@@ -6,7 +6,7 @@ import net.tiles.Tile;
 public class CountdownThread extends Thread{
 	
 	private int ScenarioID;
-	private int time = 30;
+	
 	public CountdownThread(int ScenarioID){
 		this.ScenarioID = ScenarioID;
 	}
@@ -18,12 +18,12 @@ public class CountdownThread extends Thread{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		time--;
+		Engine.time--;
 		if(Engine.mainPlayer().returnCurrentLevelID() == ScenarioID && Engine.inGame){
 			Platform.runLater(new Runnable() {
 				public void run() {
 					
-     	    			Engine.itemLabel.setText("Countdown Timer: " + time);
+     	    			Engine.itemLabel.setText("Countdown Timer: " + Engine.time);
 				}
      	    	});
 		
