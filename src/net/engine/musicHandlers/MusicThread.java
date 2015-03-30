@@ -5,7 +5,7 @@ import net.engine.Engine;
 
 public class MusicThread extends Thread {
 
-	
+	/*
 	private boolean firstRun = true;
 	
 	
@@ -74,5 +74,5 @@ public class MusicThread extends Thread {
     	
     }
 	
-	
+	*/
 }
