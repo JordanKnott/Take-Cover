@@ -46,7 +46,7 @@ public class Start extends Application{
 
 	//public static Font BIRTHFONT;
 	
-	public static boolean playMusic = false;
+	static boolean playMusic = false;
 	
 	
 	static Engine gameEngine = new Engine();
@@ -94,8 +94,8 @@ public class Start extends Application{
 
 	
 	public static boolean isRight(double touchX, double touchY, double stageHeight, double stageWidth){
-		System.out.println(touchX + " : " + sceneStartWidth*.66);
-		if(touchX > sceneStartWidth*.66){
+		System.out.println(touchX + " : " + sceneStartWidth*.75);
+		if(touchX > sceneStartWidth*.75){
 			
 			Engine.updateK(KeyCode.RIGHT);
 			return true;
@@ -108,7 +108,7 @@ public class Start extends Application{
 		return false;
 	}
 	public static boolean isLeft(double touchX, double touchY, double stageHeight, double stageWidth){
-		if(touchX < sceneStartWidth*.33){
+		if(touchX < sceneStartWidth*.25){
 			Engine.updateK(KeyCode.LEFT);
 			return true;
 				
@@ -116,7 +116,7 @@ public class Start extends Application{
 		return false;
 	}
 	public static boolean isUp(double touchX, double touchY, double stageHeight, double stageWidth){
-		if(touchX > sceneStartWidth*.66 == false && touchX < sceneStartWidth*.33  == false){
+		if(touchX > sceneStartWidth*.75 == false && touchX < sceneStartWidth*.25  == false){
 			
 				
 			if(touchY < sceneStartHeight/2){
@@ -129,7 +129,7 @@ public class Start extends Application{
 		return false;
 	}
 	public static boolean isDown(double touchX, double touchY, double stageHeight, double stageWidth){
-		if(touchX > sceneStartWidth*.66 == false && touchX < sceneStartWidth*.33  == false){
+		if(touchX > sceneStartWidth*.75 == false && touchX < sceneStartWidth*.25  == false){
 			
 			
 			if(touchY > sceneStartHeight * .5){

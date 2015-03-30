@@ -660,7 +660,6 @@ public class Engine {
     	GridPane.setHalignment(label2, HPos.CENTER);
     	GridPane.setHalignment(label3, HPos.CENTER);
     	GridPane.setHalignment(label4, HPos.CENTER);
-    	GridPane.setHalignment(label5, HPos.CENTER);
     	GridPane.setHalignment(iView, HPos.CENTER);
     	GridPane.setHalignment(label6, HPos.CENTER);
     	label1.setAlignment(Pos.CENTER);
