@@ -3,6 +3,7 @@ package net.engine.overview;
 import net.Start;
 import net.engine.Engine;
 import net.engine.introUI.HouseIntroUI;
+import net.engine.introUI.RoadIntroUI;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -150,7 +151,13 @@ public class DetailedOverviewUI {
 	        	pane.add(label3,0,2);
 	        	
 	        	Scene scene = new Scene(pane);
-	        	scene.getStylesheets().add(HouseIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+	    		if(Engine.gridSize < 15){
+	    			scene.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
+
+	    		}else{		
+	    			scene.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+	    		}
+	    		
 	        	stage.getIcons().add(new Image(getClass().getResource("/net/assets/menu/Emblem.png").toString()));
 	        	stage.setScene(scene);
 	        	stage.show();

@@ -14,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import net.Start;
 import net.engine.Engine;
 import net.engine.introUI.HouseIntroUI;
+import net.engine.introUI.RoadIntroUI;
 import net.engine.introUI.ScenarioSelect;
 
 public class HouseOverviewUI {
@@ -66,7 +67,13 @@ public class HouseOverviewUI {
     	helpPane.setPadding(new Insets(150,150,150,150));
 
 		Scene intro = new Scene(helpPane,Start.sceneStartWidth,Start.sceneStartHeight);
-		intro.getStylesheets().add(HouseIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+		if(Engine.gridSize < 15){
+			intro.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
+
+		}else{		
+			intro.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+		}
+		
 		
 		label6.setOnKeyPressed(new EventHandler<KeyEvent>(){
 	    	public void handle(KeyEvent mainMenuHandler){

@@ -80,7 +80,13 @@ public class ScenarioSelect{
     
     // show the scene.
     Scene scene = new Scene(core,Start.sceneStartWidth,Start.sceneStartHeight);
-    scene.getStylesheets().add(ScenarioSelect.class.getResource("/net/assets/menu/MainMenu.css").toString());
+	if(Engine.gridSize < 15){
+		scene.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
+
+	}else{		
+		scene.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+	}
+	
     Start.primaryStage.setScene(scene);
     
     /* bind the preferred size of the scroll area to the size of the scene.

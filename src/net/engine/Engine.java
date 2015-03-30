@@ -601,7 +601,13 @@ public class Engine {
     	helpPane2.setPadding(new Insets(150,150,150,150));
 
 		computerControl = new Scene(helpPane2,Start.sceneStartWidth,Start.sceneStartHeight);
-		computerControl.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+		if(Engine.gridSize < 15){
+			computerControl.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
+
+		}else{		
+			computerControl.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+		}
+		
 		label62.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent t) {
             	Engine.LoadHouseLevel();
@@ -676,8 +682,8 @@ public class Engine {
         helpGrid.add(label4,0,3);
         helpGrid.add(label5,0,4);
         
-        helpGrid.add(iView,0,4);
-        helpGrid.add(label6,0,5);
+        helpGrid.add(iView,0,5);
+        helpGrid.add(label6,0,6);
     	helpGrid.setStyle("-fx-background-color:rgba(0, 0, 0, 0.5)");
         
     	
@@ -710,7 +716,13 @@ public class Engine {
     	});
 		
 		tabletControl = new Scene(helpPane,Start.sceneStartWidth,Start.sceneStartHeight);
-		tabletControl.getStylesheets().add(HouseIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+		if(Engine.gridSize < 15){
+			tabletControl.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
+
+		}else{		
+			tabletControl.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
+		}
+		
 		
 
 

@@ -42,11 +42,11 @@ import javafx.stage.WindowEvent;
 public class Start extends Application{
 
 
-	public final String version = "v1.1.7";
+	public final String version = "v1.1.9";
 
 	//public static Font BIRTHFONT;
 	
-	static boolean playMusic = true;
+	static boolean playMusic = false;
 	
 	
 	static Engine gameEngine = new Engine();
@@ -175,10 +175,29 @@ public class Start extends Application{
 			Engine.controlScene = Engine.tabletControl;
 			Engine.updateRate = 1250;
 			Engine.time = 45;
+			mainMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/TakeCoverMenuSmall.css").toString());
+			gameMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenuSmall.css").toString());
+			newLevelMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenuSmall.css").toString());
+			newWorldMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenuSmall.css").toString());
+			loadWorldMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenuSmall.css").toString());
+			optionsMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/TakeCoverMenuSmall.css").toString());
+			helpMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/OptionsMenu.css").toString());
+			selectionMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenuSmall.css").toString());
+			
+
 		}else {
 			System.out.println("Hit!");
 			Engine.controlScene = Engine.computerControl;
 			Engine.updateRate = 750;
+			mainMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/TakeCoverMenu.css").toString());
+			gameMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
+			newLevelMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
+			newWorldMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
+			loadWorldMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
+			optionsMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/TakeCoverMenu.css").toString());
+			helpMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/OptionsMenu.css").toString());
+			selectionMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
+
 		}
 		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 			@Override
@@ -194,14 +213,7 @@ public class Start extends Application{
 		documentBase = getHostServices().getDocumentBase();
 		javafx.scene.text.Font BIRTHFONT = javafx.scene.text.Font.loadFont(getClass().getResourceAsStream("/net/BIRTH.ttf"), 10);
 		Engine.BIRTHFONT = BIRTHFONT;
-		mainMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/TakeCoverMenu.css").toString());
-		gameMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
-		newLevelMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
-		newWorldMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
-		loadWorldMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
-		optionsMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/TakeCoverMenu.css").toString());
-		helpMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/OptionsMenu.css").toString());
-		selectionMenu.getStylesheets().add(getClass().getResource("/net/assets/menu/MainMenu.css").toString());
+
 
 		Engine.setCurrentMenu(1);
 
