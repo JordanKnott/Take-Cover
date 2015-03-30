@@ -2,7 +2,7 @@
      -fx-background-image: url("TestBackground.png");
 }
 .label {
-    -fx-font-size: 45px;
+    -fx-font-size: 50px;
     -fx-text-fill: #fff;
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
     	-fx-font-family: BIRTH_OF_A_HERO;
@@ -16,11 +16,11 @@
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 #mainLabel {
-    -fx-font: bold italic 35pt "Arial";
+    -fx-font: bold italic 50pt "Arial";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 #titleLabel {
-    -fx-font: bold italic 35pt "Arial";
+    -fx-font: bold italic 65pt "Arial";
     -fx-effect: dropshadow( one-pass-box , white , 8 , 0.0 , 2 , 0 );	
 	
 }

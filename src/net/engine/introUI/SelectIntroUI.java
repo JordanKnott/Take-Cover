@@ -91,13 +91,7 @@ public static void runIntro(){
 	
 
 	Scene intro = new Scene(helpPane,Start.sceneStartWidth,Start.sceneStartHeight);
-	if(Engine.gridSize < 15){
-		intro.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
-
-	}else{		
-		intro.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
-	}
-	
+	intro.getStylesheets().add(HouseIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
 	
 	Start.primaryStage.setScene(intro);
 	}

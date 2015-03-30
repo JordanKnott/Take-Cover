@@ -64,13 +64,7 @@ public class HouseIntroUI {
     	helpPane.setPadding(new Insets(150,150,150,150));
 
 		Scene intro = new Scene(helpPane,Start.sceneStartWidth,Start.sceneStartHeight);
-		if(Engine.gridSize < 15){
-			intro.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
-
-		}else{		
-			intro.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
-		}
-		
+		intro.getStylesheets().add(HouseIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
 		
 
 		label6.setOnMouseClicked(new EventHandler<MouseEvent>() {

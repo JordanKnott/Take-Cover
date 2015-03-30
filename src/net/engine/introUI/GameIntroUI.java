@@ -62,12 +62,8 @@ public class GameIntroUI {
     	helpPane.setPadding(new Insets(150,150,150,150));
 
 		Scene scene1 = new Scene(helpPane,Start.sceneStartWidth,Start.sceneStartHeight);
-		if(Engine.gridSize < 15){
-			scene1.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenuSmall.css").toString());
+		scene1.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
 
-		}else{		
-			scene1.getStylesheets().add(RoadIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
-		}
 		
 
 
