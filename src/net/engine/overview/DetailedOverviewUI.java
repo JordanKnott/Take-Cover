@@ -3,6 +3,8 @@ package net.engine.overview;
 import net.Start;
 import net.engine.Engine;
 import net.engine.introUI.HouseIntroUI;
+import net.engine.introUI.RoadIntroUI;
+import net.engine.introUI.ScenarioSelect;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -25,19 +27,49 @@ public class DetailedOverviewUI {
 	
 	public static void runOverview(){
 		
-		Stage detailStage = new Stage(StageStyle.DECORATED);
+
 		BorderPane detailCoreGrid = new BorderPane();
 		GridPane centerGrid = new GridPane();
 		GridPane houseGrid = new GridPane();
 		GridPane house2Grid = new GridPane();
 		GridPane roadGrid = new GridPane();
 		GridPane schoolGrid = new GridPane();
-		
+		GridPane continueGrid = new GridPane();
 		GridPane innerGrid = new GridPane();
 		
 		Label houseDesc = new Label("Click an item name to why its needed/not needed");
 		houseGrid.setAlignment(Pos.CENTER);
+	
+		Label cL = new Label("(Click me to continue)");
+		continueGrid.setAlignment(Pos.CENTER);
+		cL.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent t) {
+
+            	ScenarioSelect.runUI();   	
+            }
+
+    	});
+		cL.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent t) {
+
+            	cL.setEffect(Engine.returnEnteredEffect());
+            	
+            }
+
+    	});
+		cL.setOnMouseExited(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent t) {
+            	cL.setEffect(null);
+
+            	
+            	
+            }
+
+    	});
+		continueGrid.add(cL, 0, 0);
 		innerGrid.setAlignment(Pos.CENTER);
+		GridPane.setHalignment(cL, HPos.CENTER);
+		GridPane.setHalignment(houseDesc, HPos.CENTER);
 		GridPane.setValignment(houseDesc, VPos.CENTER);
 		houseDesc.setId("detailLabel");
 		Label item1 = new Label("Apple - Not Needed"); 
@@ -757,13 +789,12 @@ public class DetailedOverviewUI {
 		centerGrid.add(roadGrid,1,0);
 		centerGrid.add(schoolGrid,1,1);
 		detailCoreGrid.setCenter(centerGrid);
-		
-		Scene detailScene = new Scene(detailCoreGrid,  Start.sceneStartWidth - (Start.sceneStartWidth * .25) + 200 , Start.sceneStartHeight - (Start.sceneStartHeight * .25));
+		detailCoreGrid.setBottom(continueGrid);
+		Scene detailScene = new Scene(detailCoreGrid,  Start.sceneStartWidth , Start.sceneStartHeight );
 		detailScene.getStylesheets().add(HouseIntroUI.class.getResource("/net/assets/menu/MainMenu.css").toString());
-		detailStage.setScene(detailScene);
-		detailStage.getIcons().add(new Image(DetailedOverviewUI.class.getResource("/net/assets/menu/Emblem.png").toString()));
-		detailStage.setTitle("Detailed Overview");
-		detailStage.show();
+		Start.primaryStage.setScene(detailScene);
+		
+
 		
 	}
 	

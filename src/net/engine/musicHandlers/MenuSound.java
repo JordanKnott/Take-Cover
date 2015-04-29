@@ -28,12 +28,12 @@ public class MenuSound {
 	final MediaPlayer mediaPlayer1 = new MediaPlayer(media1);
 	
 	public void playBackground1(){
-		mediaPlayer.play();
-		
+		//mediaPlayer.play();
+		//
 	}
 	
 	public void playBackground2(){
-		mediaPlayer1.play();
+		//mediaPlayer1.play();
 	}
 	
 	public void stopMusic(){

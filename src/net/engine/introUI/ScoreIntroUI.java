@@ -15,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import net.Start;
 import net.engine.Engine;
+import net.engine.feedback.FeedbackSystem;
 
 public class ScoreIntroUI{
 
@@ -66,7 +67,7 @@ public static void runIntro(){
         Label label3 = new Label("Correct Items: " + Engine.score.returnItems());
         Label label4 = new Label("Schoolmates Saved: " + Engine.score.returnSchool());
         Label label5 = new Label("Scenarios Succesfully Completed: " + Engine.score.returnScenDone());
-        Label label6 = new Label("( Click me to exit the game )");
+        Label label6 = new Label("( Click me to continue )");
         
     	GridPane.setHalignment(label1, HPos.CENTER);
     	GridPane.setHalignment(label2, HPos.CENTER);
@@ -94,8 +95,7 @@ public static void runIntro(){
 		label6.setOnMouseClicked(new EventHandler<MouseEvent>() {
 	        public void handle(MouseEvent t) {
 	        	
-				com.sun.javafx.application.PlatformImpl.tkExit();
-				Platform.exit();
+				FeedbackSystem.runUI();
 	        	
 	        	
 	        }

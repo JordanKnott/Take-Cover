@@ -20,11 +20,11 @@ public class MusicThread extends Thread {
 			Engine.threadRunning = false;
 		}
 		
-		Sound sound = new Sound();
-		sound.playBackground1();
+		//Sound sound = new Sound();
+		//sound.playBackground1();
 		
 		for(int i = 0; i < 11; i++){
-			sound.setVolume(i * .1);
+			//sound.setVolume(i * .1);
 			try {
 				Thread.sleep(250);
 			} catch (InterruptedException e) { }

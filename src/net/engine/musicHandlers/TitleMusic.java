@@ -15,21 +15,24 @@ public class TitleMusic extends Thread{
 			
 		}
 		
-		Sound sound = new Sound();
-		sound.playTitleMusic();
+		//Sound sound = new Sound();
+		//sound.playTitleMusic();
 		
 		for(int i = 0; i < 11; i++){
-			sound.setTitleVolume(i * .1);
+			//sound.setTitleVolume(i * .1);
 			try {
 				Thread.sleep(250);
 			} catch (InterruptedException e) { 
-				System.out.println("Interrupt!"); sound.stopMusic(); }
+				///System.out.println("Interrupt!"); sound.stopMusic(); }
 		}
 		
 		
 		try {
 			Thread.sleep(100000);
-		} catch (InterruptedException e) { System.out.println("Interrupt!"); sound.stopMusic(); }
+		} catch (InterruptedException e) { System.out.println("Interrupt!"); 
+		//sound.stopMusic(); 
+		}
+		}
 		
     
 

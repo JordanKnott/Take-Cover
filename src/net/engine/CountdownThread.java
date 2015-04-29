@@ -18,8 +18,9 @@ public class CountdownThread extends Thread{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Engine.time--;
+		
 		if(Engine.mainPlayer().returnCurrentLevelID() == ScenarioID && Engine.inGame){
+			Engine.time--;
 			Platform.runLater(new Runnable() {
 				public void run() {
 					
@@ -31,7 +32,7 @@ public class CountdownThread extends Thread{
 	}
 	
 	public void run(){
-		
+		Engine.time = 30;
 			for(int i = 0; i < 30; i++){
 				pulse();
 			}

@@ -35,30 +35,30 @@ public class HouseOverviewUI {
         Label label2 = new Label("Correct Items Collected - "  + Engine.score.returnItems());
         Label label3 = new Label("Correct Items Needed - 10");
 
-        Label label4 = new Label("Click Me to see detailed overview");
-        label4.setStyle("-fx-text-color:rgba(0, 0, 255, 0.7)");
+        //Label label4 = new Label("Click Me to see detailed overview");
+       // label4.setStyle("-fx-text-color:rgba(0, 0, 255, 0.7)");
         Label label5 = new Label("");
         Label label6 = new Label("(Click me to continue)");
         
     	GridPane.setHalignment(label1, HPos.CENTER);
     	GridPane.setHalignment(label2, HPos.CENTER);
     	GridPane.setHalignment(label3, HPos.CENTER);
-    	GridPane.setHalignment(label4, HPos.CENTER);
+    	//GridPane.setHalignment(label4, HPos.CENTER);
     	GridPane.setHalignment(label5, HPos.CENTER);
     	GridPane.setHalignment(label6, HPos.CENTER);
     	label1.setAlignment(Pos.CENTER_LEFT);
     	label2.setAlignment(Pos.CENTER_LEFT);
     	label3.setAlignment(Pos.CENTER_LEFT);
-    	label4.setAlignment(Pos.CENTER_LEFT);
+    	//label4.setAlignment(Pos.CENTER_LEFT);
     	label5.setAlignment(Pos.CENTER_LEFT);
     	label6.setAlignment(Pos.CENTER_LEFT);
 
         helpGrid.add(label1,0,0);
         helpGrid.add(label2,0,1);
         helpGrid.add(label3,0,2);
-        helpGrid.add(label4,0,3);
-        helpGrid.add(label5,0,4);
-        helpGrid.add(label6,0,5);
+       // helpGrid.add(label4,0,3);
+        helpGrid.add(label5,0,3);
+        helpGrid.add(label6,0,4);
     	helpGrid.setStyle("-fx-background-color:rgba(0, 0, 0, 0.5)");
         
     	
@@ -70,18 +70,10 @@ public class HouseOverviewUI {
 		
 		label6.setOnKeyPressed(new EventHandler<KeyEvent>(){
 	    	public void handle(KeyEvent mainMenuHandler){
-	    		ScenarioSelect.runUI();
+	    		DetailedOverviewUI.runOverview();
 	    	}
 		});		
 		label6.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent t) {
-
-            	ScenarioSelect.runUI();
-            	
-            }
-
-    	});
-		label4.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent t) {
 
             	DetailedOverviewUI.runOverview();
@@ -89,25 +81,23 @@ public class HouseOverviewUI {
             }
 
     	});
-		label4.setOnMouseEntered(new EventHandler<MouseEvent>() {
+		label6.setOnMouseEntered(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent t) {
 
-            	label4.setEffect(Engine.returnEnteredEffect());
-            	label4.setText(">Click Me to see detailed overview<");
-
-            }
-
-    	});
-		label4.setOnMouseExited(new EventHandler<MouseEvent>() {
-            public void handle(MouseEvent t) {
-            	label4.setEffect(null);
-
-            	label4.setText("Click Me to see detailed overview");
+            	label6.setEffect(Engine.returnEnteredEffect());
             	
             }
 
     	});
-		
+		label6.setOnMouseExited(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent t) {
+            	label6.setEffect(null);
+
+            	
+            	
+            }
+
+    	});
 		Start.primaryStage.setScene(intro);
 	}
 	
