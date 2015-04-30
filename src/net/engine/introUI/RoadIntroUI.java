@@ -33,7 +33,7 @@ public class RoadIntroUI {
     	
         
         Label label1 = new Label("Ditches are the best place to take cover out");
-        Label label2 = new Label("in the open.");
+        Label label2 = new Label("in the open. You have 1 minute 15 seconds.");
         Label label3 = new Label("Tornados come from the southwest and travel");
         Label label4 = new Label("towards the northeast so having as many");
         Label label5 = new Label("walls between you and the tornado is a good thing.");

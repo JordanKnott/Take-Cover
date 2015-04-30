@@ -42,7 +42,7 @@ import javafx.stage.WindowEvent;
 public class Start extends Application{
 
 
-	public final String version = "v1.1.7";
+	public final String version = "v1.2.0";
 
 	//public static Font BIRTHFONT;
 	
@@ -167,19 +167,14 @@ public class Start extends Application{
 	//@Override public void init() { System.out.println("INIT"); };
 	@Override
 	public void start(Stage primaryStage) {
-//com.sun.javafx.application.tkExit()
-		
+		//com.sun.javafx.application.tkExit()
+
 		//Hello
 		Engine.buildControlScene();
-		if(Engine.gridSize < 15){
-			Engine.controlScene = Engine.tabletControl;
-			Engine.updateRate = 1250;
-			Engine.time = 45;
-		}else {
-			System.out.println("Hit!");
-			Engine.controlScene = Engine.computerControl;
-			Engine.updateRate = 750;
-		}
+
+		Engine.updateRate = 1250;
+		Engine.controlScene = Engine.computerControl;
+
 		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent iEvent) {

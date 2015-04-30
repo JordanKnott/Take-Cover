@@ -32,8 +32,8 @@ public class HouseIntroUI {
         Label label1 = new Label("Rooms that have no exterior (outside) walls");
         Label label2 = new Label("and have no windows are the safest.");
         Label label3 = new Label("Tornados come from the southwest and travel");
-        Label label4 = new Label("towards the northeast so having as much");
-        Label label5 = new Label("walls between you and the tornado is a good thing.");
+        Label label4 = new Label("towards the northeast so having as many walls between you and");
+        Label label5 = new Label("the tornado is a good thing. You have 1 minute 15 seconds.");
 
         Label label6 = new Label("(Click me to continue)");
         

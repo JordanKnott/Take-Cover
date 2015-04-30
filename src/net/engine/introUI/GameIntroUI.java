@@ -35,7 +35,7 @@ public class GameIntroUI {
         Label label2 = new Label("Gather Items for an emergency kit.");
         Label label3 = new Label("You have 10 spots for items.");
         Label label4 = new Label("Find the best areas to take cover in.");
-        Label label5 = new Label("Thirty seconds per scenario except for the first one.");
+        Label label5 = new Label("You have an unlimited amount of time.");
         Label label7 = new Label("");
         Label label6 = new Label("( Click me to continue )");
         

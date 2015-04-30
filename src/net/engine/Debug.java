@@ -88,7 +88,7 @@ public class Debug {
 		Label label = new Label("DEBUG COMMANDS");
 		Label yes = new Label("Open Scenario Select");
 
-		Label no = new Label("Increase Win Count");
+		Label no = new Label("Item score to 10");
 		yes.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
@@ -128,12 +128,7 @@ public class Debug {
 
 			@Override
 			public void handle(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				for(int i = 0; i < 11; i++){
-					Engine.mainPlayer.increaseWinCount();
-			
-				}
-				Engine.mainPlayer.setInvSpace(0);
+				Engine.score.setItems(10);
 				dialogStage.close();
 			}
 	        	
@@ -143,7 +138,7 @@ public class Debug {
 		no.setOnMouseEntered(new EventHandler<MouseEvent>() {
 	        public void handle(MouseEvent mouseHandler) {
 	        	
-	        	no.setText(">Increase Win Count<");
+	        	no.setText(">Item score to 10<");
 	        	no.setEffect(Engine.returnEnteredEffect());
 	             
 	        }
@@ -152,7 +147,7 @@ public class Debug {
 		no.setOnMouseExited(new EventHandler<MouseEvent>() {
 	        public void handle(MouseEvent mouseHandler) {
 	        	
-	        	no.setText("Increase Win Count");
+	        	no.setText("Item score to 10");
 	        	no.setEffect(null);
 	             
 	        }

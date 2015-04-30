@@ -28,7 +28,7 @@ public class ScoreBoard {
 	}
 	
 	public int returnScore(){
-		int firstSum = (scenariosDone * correctItems);
+		int firstSum = scenariosDone * 5 + 5 + correctItems;
 		if(schoolMatesSaved == 3 || schoolMatesSaved == 4){
 			currentPlayerScore = firstSum + 5;
 		}
@@ -46,7 +46,9 @@ public class ScoreBoard {
 	public void increaseItems(){
 		correctItems++;
 	}
-	
+	public void setItems(int item){
+		correctItems = item;
+	}
 	
 	public void resetScore(){
 		currentPlayerScore = 0;
