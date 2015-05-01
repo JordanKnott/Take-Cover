@@ -96,7 +96,8 @@ public static void runIntro(){
 	        public void handle(MouseEvent t) {
 	        	
 				//FeedbackSystem.runUI();
-	        	
+				com.sun.javafx.application.PlatformImpl.tkExit();
+				Platform.exit();
 	        	
 	        }
 

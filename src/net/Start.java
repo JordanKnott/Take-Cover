@@ -42,7 +42,7 @@ import javafx.stage.WindowEvent;
 public class Start extends Application{
 
 
-	public final String version = "v1.2.0";
+	public final String version = "v1.2.1";
 
 	//public static Font BIRTHFONT;
 	
