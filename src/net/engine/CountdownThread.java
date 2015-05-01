@@ -32,8 +32,8 @@ public class CountdownThread extends Thread{
 	}
 	
 	public void run(){
-		Engine.time = 90;
-			for(int i = 0; i < 90 ; i++){
+		Engine.time = 75;
+			for(int i = 0; i < 75 ; i++){
 				pulse();
 			}
 			System.out.println("Countdown Thread: Started");

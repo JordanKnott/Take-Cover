@@ -15,7 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import net.Start;
 import net.engine.Engine;
-import net.engine.feedback.FeedbackSystem;
+
 
 public class ScoreIntroUI{
 
@@ -95,7 +95,7 @@ public static void runIntro(){
 		label6.setOnMouseClicked(new EventHandler<MouseEvent>() {
 	        public void handle(MouseEvent t) {
 	        	
-				FeedbackSystem.runUI();
+				//FeedbackSystem.runUI();
 	        	
 	        	
 	        }

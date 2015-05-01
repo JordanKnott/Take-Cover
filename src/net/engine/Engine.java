@@ -1416,12 +1416,19 @@ public static String updateK(KeyCode t){
 			String ntcLogoS = getClass().getResource("/net/assets/menu/NTClogo.png").toString();
 		    Image ntcLogo = new Image(ntcLogoS);
 		    ImageView ntcLogoView = new ImageView(ntcLogo);
-		    ntcLogoView.setFitHeight(256/1.5);
-		    ntcLogoView.setFitWidth(256+128/1.5);
-	    	logoPane.add(ntcLogoView, 0, 0);
+			String nigthwolf = getClass().getResource("/net/assets/menu/NightWolf.png").toString();
+		    Image nightwolfI = new Image(nigthwolf);
+		    ImageView nightwolfView = new ImageView(nightwolfI);
+		    ntcLogoView.setFitHeight(256/1.75);
+		    ntcLogoView.setFitWidth(256+128/1.75);
+	    	logoPane.add(ntcLogoView, 1, 0);
+	    	  
+	    	nightwolfView.setFitHeight(256/1.75);
+	    	nightwolfView.setFitWidth(256+128/1.75);
+	    	logoPane.add(nightwolfView, 0, 0);
 	    	
 	    	masterPane.setBottom(logoPane);
-	    	
+
 	    	
 	    	mainMenu.setAlignment(Pos.TOP_CENTER);
 
