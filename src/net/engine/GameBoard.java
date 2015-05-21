@@ -9,7 +9,8 @@ import net.tiles.BlankTile;
 public class GameBoard {
 
 	
-	
+
+	//Could be redone using a for loop to generate new GameTiles inside the array but *lazy*
 
 	private static int gridMaxY = 75-1;
 	private static int gridMaxX = 45-1;

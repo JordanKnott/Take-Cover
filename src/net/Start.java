@@ -42,7 +42,6 @@ import javafx.stage.WindowEvent;
 public class Start extends Application{
 
 
-	public final String version = "v1.2.1";
 
 	//public static Font BIRTHFONT;
 	
@@ -184,8 +183,24 @@ public class Start extends Application{
 			
 				
 		});
+		
+	    EventHandler<KeyEvent> keyEventHandler =
+	            new EventHandler<KeyEvent>() {
+	                public void handle(final KeyEvent keyEvent) {
+	                    if (keyEvent.getCode() == KeyCode.P) {
+	                    	Engine.debug.dialogDebug();
+	     
+	                        keyEvent.consume();
+	                    }
+	                }
+	            };
+	            
+	     primaryStage.addEventHandler(KeyEvent.KEY_RELEASED, keyEventHandler);
 		Start.primaryStage = primaryStage;
 
+
+		
+		
 		documentBase = getHostServices().getDocumentBase();
 		javafx.scene.text.Font BIRTHFONT = javafx.scene.text.Font.loadFont(getClass().getResourceAsStream("/net/BIRTH.ttf"), 10);
 		Engine.BIRTHFONT = BIRTHFONT;
@@ -201,6 +216,8 @@ public class Start extends Application{
 		Engine.setCurrentMenu(1);
 
 
+		
+		
 
 		Engine.init();
 

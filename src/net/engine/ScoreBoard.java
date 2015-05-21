@@ -28,11 +28,11 @@ public class ScoreBoard {
 	}
 	
 	public int returnScore(){
-		int firstSum = scenariosDone * 5 + 5 + correctItems;
+		int firstSum = scenariosDone * 5;
 		if(schoolMatesSaved == 3 || schoolMatesSaved == 4){
 			currentPlayerScore = firstSum + 5;
 		}
-		return currentPlayerScore;
+		return currentPlayerScore + 5 + correctItems;
 	}
 	
 	public void increaseSchool(){

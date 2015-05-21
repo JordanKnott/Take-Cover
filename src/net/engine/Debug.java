@@ -1,7 +1,13 @@
 package net.engine;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+import net.Start;
 import net.engine.introUI.SelectIntroUI;
 import net.engine.overview.DetailedOverviewUI;
+import net.thenightwolf.console.JConsole;
+import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -19,157 +25,67 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class Debug {
+public class Debug{
 
 	
-	private static boolean debugActive = false;
+
+
+	public static volatile boolean terminalActive = false;
+
+	private SwingNode swingNode ;
+
+	public static Stage terminal;
+
+	public static JConsole console;
+	
 	
 	public void introDebug(){
-		System.out.println("DEBUG INTRO");
-	//	if(debugActive == false){
-		//	activateDebug();
-		//}else {
-			dialogDebug();
-		//}
-		
-		
+
+		dialogDebug();
+
+
 	}
-	
-	public void activateDebug(){
-		System.out.println("DEBUG INTRO");
-		Stage dialogStage = new Stage(StageStyle.UNIFIED);
-		GridPane grid = new GridPane();
 
-		
-		
-		
-		
-		
-		TextField input = new TextField();
-		Button button = new Button("Activate Debug");
-		
-		button.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent t) {
-				System.out.println(input.getText().equals("nightwolf"));
-				System.out.println(input.getText());
-				
-				if(input.getText().equals("nightwolf")){
-					debugActive = true;
-				}
 
-				dialogStage.close();
-			}
-
-		});
-		
-		
-    	grid.setAlignment(Pos.CENTER);
-		grid.add(button,0,0);
-		grid.add(input,1,0);
-		
-		
-		
-		grid.getStylesheets().add(Engine.class.getResource("/net/assets/menu/Dialog.css").toString());
-		Scene scene = new Scene(grid);
-	
-				
-		dialogStage.setScene(scene);
-		dialogStage.show();
-	}
 	
 	
 	public void dialogDebug(){
 		
-		Stage dialogStage = new Stage(StageStyle.UNIFIED);
+		Stage dialogStage = new Stage(StageStyle.UNDECORATED);
+		terminal = dialogStage;
 		GridPane grid = new GridPane();
+		terminal.initOwner(Start.primaryStage);
+
+	    swingNode = new SwingNode();
+
+	
+	    JConsole console = new JConsole(475,50);
+	    Debug.console = console;
 
 		
-		Label label = new Label("DEBUG COMMANDS");
-		Label yes = new Label("Open Scenario Select");
 
-		Label no = new Label("Item score to 10");
-		yes.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
+		SwingUtilities.invokeLater(new Runnable() {
 			@Override
-			public void handle(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-				SelectIntroUI.runIntro();
-				
-				
-				dialogStage.close();
-				
+			public void run() {
+				swingNode.setContent(console);
 				
 			}
-	        	
-	        	
-	    });
-		
-		yes.setOnMouseEntered(new EventHandler<MouseEvent>() {
-	        public void handle(MouseEvent mouseHandler) {
-	        	
-	        	yes.setText(">Open Scenario Select<");
-	        	yes.setEffect(Engine.returnEnteredEffect());
-	             
-	        }
-	    });
-    	
-		yes.setOnMouseExited(new EventHandler<MouseEvent>() {
-	        public void handle(MouseEvent mouseHandler) {
-	        	
-	        	yes.setText("Open Scenario Select");
-	        	yes.setEffect(null);
-	             
-	        }
-	    });
-		
-		no.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		});
 
-			@Override
-			public void handle(MouseEvent arg0) {
-				Engine.score.setItems(10);
-				dialogStage.close();
-			}
-	        	
-	    });
+
 		
+		grid.add(swingNode, 0, 0);
 		
-		no.setOnMouseEntered(new EventHandler<MouseEvent>() {
-	        public void handle(MouseEvent mouseHandler) {
-	        	
-	        	no.setText(">Item score to 10<");
-	        	no.setEffect(Engine.returnEnteredEffect());
-	             
-	        }
-	    });
-    	
-		no.setOnMouseExited(new EventHandler<MouseEvent>() {
-	        public void handle(MouseEvent mouseHandler) {
-	        	
-	        	no.setText("Item score to 10");
-	        	no.setEffect(null);
-	             
-	        }
-	    });
-		
-    	GridPane.setHalignment(label, HPos.CENTER);
-    	GridPane.setHalignment(yes, HPos.CENTER);
-    	GridPane.setHalignment(no, HPos.CENTER);
-    	grid.setAlignment(Pos.CENTER);
-		grid.add(label,0,0);
-		grid.add(yes,0,1);
-		grid.add(no,0,2);
 		grid.getStylesheets().add(Engine.class.getResource("/net/assets/menu/Dialog.css").toString());
-		Scene scene = new Scene(grid,650,550);
+		Scene scene = new Scene(grid,475,250);
 		
+		
+		terminal.setScene(scene);
+		terminal.show();
 
-				
-		dialogStage.setScene(scene);
-		dialogStage.show();
-		
 	}
-	
-	
-		
+
+
+
+
 }

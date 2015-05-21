@@ -5,6 +5,9 @@ import javafx.scene.image.ImageView;
 
 public class ImageBoard {
 
+	//Could be redone using a for loop to generate new ImageViews inside the array but *lazy*
+	
+	
 	public static ImageView imageTile1 = new ImageView();
 	public static ImageView imageTile2 = new ImageView();
 	public static ImageView imageTile3 = new ImageView();
