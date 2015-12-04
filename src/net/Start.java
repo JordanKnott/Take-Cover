@@ -4,24 +4,14 @@ import java.awt.Dimension;
 import java.awt.SplashScreen;
 import java.awt.Toolkit;
 
-import net.engine.*;
-import net.engine.introUI.GameIntroUI;
-import net.engine.introUI.HouseIntroUI;
-import net.engine.introUI.RoadIntroUI;
-import net.engine.introUI.SchoolIntroUI;
-import net.engine.musicHandlers.MusicThread;
-import net.engine.musicHandlers.TitleMusic;
-import net.engine.resourceHandlers.MainMenuImageHandler;
 //JavaFX imports
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -32,11 +22,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import net.engine.AssetLoader;
+import net.engine.Engine;
+import net.engine.introUI.GameIntroUI;
+import net.engine.introUI.HouseIntroUI;
+import net.engine.introUI.RoadIntroUI;
+import net.engine.introUI.SchoolIntroUI;
+import net.engine.musicHandlers.MusicThread;
+import net.engine.musicHandlers.TitleMusic;
+import net.engine.resourceHandlers.MainMenuImageHandler;
 
 
 public class Start extends Application{
@@ -45,6 +41,9 @@ public class Start extends Application{
 
 	//public static Font BIRTHFONT;
 	
+	public static final String version = "1.2.2";
+
+
 	static boolean playMusic = true;
 	
 	
